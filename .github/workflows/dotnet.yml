@@ -56,9 +56,7 @@ jobs:
 
     # 复制生成的dll文件到制品目录，假设生成的文件在bin目录下，根据实际情况调整
     - name: Copy dll file
-      run: |
-        ls
-        cp dotnetcoresample.dll artifacts/
+      run: cp /home/runner/work/dotnetcore-docs-hello-world-donet/dotnetcore-docs-hello-world-donet/bin/release/net8.0/dotnetcoresample.dll artifacts/
 
     # 上传制品
     - name: Upload Artifact
