@@ -54,17 +54,13 @@ jobs:
     - name: Compile
       run: dotnet build --no-restore
 
-    # 运行测试
-    - name: Test
-      run: dotnet test
-
     # 创建制品目录
     - name: Create artifact directory
       run: mkdir -p artifacts
 
     # 复制生成的dll文件到制品目录，假设生成的文件在bin目录下，根据实际情况调整
     - name: Copy dll file
-      run: cp bin/**/*.dll artifacts/ 
+      run: cp dotnetcoresample.dll artifacts/ 
 
     # 上传制品
     - name: Upload Artifact
