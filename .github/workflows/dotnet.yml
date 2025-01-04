@@ -48,7 +48,7 @@ jobs:
 
     # 编译项目
     - name: Compile
-      run: dotnet build --no-restore
+      run: dotnet publish -c release 
 
     # 创建制品目录
     - name: Create artifact directory
