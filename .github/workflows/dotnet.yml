@@ -46,10 +46,6 @@ jobs:
       with:
         dotnet-version: '8.0.x' 
 
-    # 还原NuGet包
-    - name: Restore NuGet packages
-      run: dotnet restore
-
     # 编译项目
     - name: Compile
       run: dotnet build --no-restore
@@ -60,7 +56,9 @@ jobs:
 
     # 复制生成的dll文件到制品目录，假设生成的文件在bin目录下，根据实际情况调整
     - name: Copy dll file
-      run: cp dotnetcoresample.dll artifacts/ 
+      run: |
+        ls
+        cp dotnetcoresample.dll artifacts/
 
     # 上传制品
     - name: Upload Artifact
